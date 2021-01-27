@@ -1,0 +1,34 @@
+// room view에 관한 것들을 코드하는 곳 (using ejs view engine)
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>실시간 통신</title>
+		<script>
+			//서버에서 넘겨받은 roomid를 front end에서 ROOM_ID변수에 저장
+			const ROOM_ID = "<%= roomID %>" 
+		</scirpt>
+		// socket.io.js code를 frontend에 로딩
+		<script src="/socket.io/socket.io.js"></script> 
+		// setup our own scirpt
+		<script src="script.js" defer></script>
+		<style>
+		#video-grid{
+			display: grid;
+			grid-template-columns: repreat(auto-fill, 300px) //너비
+			gird-auto-rows = 300px //높이
+		}
+
+		video{
+			width: 100%;
+			height: 100%;
+			object-fit : cover: // 전체를 꽉 채우고 안들어가는건 자른다
+		}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="video-grid"></div> //비디오가 나타날 그리드
+	</body>
+</html>	
