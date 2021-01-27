@@ -12,7 +12,7 @@
 error_log  /var/log/nginx/error.log warn;
 
 # NGINX 마스터 프로세스 ID 를 저장할 파일 경로 지정
-    - pid        /var/run/nginx.pid;
+    $pid        /var/run/nginx.pid;
 
 
 # 접속 처리에 관한 설정
