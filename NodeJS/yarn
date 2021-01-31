@@ -1,0 +1,63 @@
+# yarn
+yarn 은 javascirpt 의 package manager 이다. npm 의 drop-in substitute 로 사용할 수 있는 점이 초기 도입에도 큰 장점이다.  
+패키지 설치 속도가 더 빠르고, 패키지 설치과정에서 패키지가 code를 running 하지 않도록 하여 더 보안상 안전하다.  
+또한, 같은 package.json 에 의존하는 두개의 서로 다른 환경이 서로 다른 버전의 패키지 의존성을 가지는 것을 방지하기 위해, 버전의 range 가 아닌, 정확한 버전을 명시한 yarn.lock 파일을 사용한다. 
+
+## 주요
+```bash
+# npm install
+yarn install 또는 yarn
+
+# npm i <package> --save
+yarn add <package>
+
+# npm i <package> --save-dev
+yarn add <package> --dev : --dev 옵션은 -D 와 같다.
+
+# 패키지 삭제
+yarn remove <package>
+
+# dependencies와 devDependencies 모두 (package.json 에 명시된) version rule 에 따라 최신 버전으로 업그레이드.
+# 만약 어떤 패키지가 semantic versioning([segVer](https://github.com/semver/semver/blob/master/semver.md))를 
+# 따르지 않는다면, version rule이 무색해져 하위 호환성이 보장되지 않는 업그레이드일 수도 있다.  
+yarn upgrade
+
+# 특정 패키지를 특정 버전으로 업그레이드 
+yarn upgrade <package>@<version>
+
+# 목록들 중에서 원하는 패키지만 최신버전으로 업그레이드하는 interactive terminal ui 를 제공한다. 
+yarn upgrade-interactive
+
+# production 환경서 필요한 dependencies 만 설치
+NODE_ENV=production yarn install 또는 yarn install --production
+```
+
+## caution
+* yarn.lock 파일은 항상 yarn 이 자동으로 관리하도록 하고, 직접 수정하지 않는다. 그리고 버전관리에 포함한다. 
+
+## 기타
+```bash
+# npm i <package> -g
+yarn global add <package>
+
+# npm init
+yarn init
+
+# CI 서버와 같이 재생 가능한 의존 패키지가 필요한 경우 --fronzen-lockfile 플래그는 유용합니다. 
+# yarn.lock과 package.json이 동기화 되지 않은 상태에서 업데이트가 필요한 경우에는 설치를 실패하고 yarn.lock을 생성하지 않습니다. 
+# [출처](http://www.holaxprogramming.com/2017/12/21/node-yarn-tutorials/)
+yarn install --frozen-lockfile
+```
+
+## Tip
+* version
+  * npm, yarn 명령어에서 : <package>@<version> 은 특정 패키지의 특정 버전을 의미한다. ex : `yarn add weppack@4.0.0`
+  * package.json 에서 : 
+    * ~ (tilt) : 최하위버전의 업데이트만 허용  
+    * ^ (carot) : 최상위 버전의 업데이트까지 자유롭게 허용.
+
+## 참고
+* npm 과의 차이 
+  * [cli difference cheetshet](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc)
+  * [Yarn vs npm](https://www.sitepoint.com/yarn-vs-npm/)
+  * [Migrating from npm (official site) ](https://yarnpkg.com/en/docs/migrating-from-npm)
