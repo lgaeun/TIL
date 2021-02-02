@@ -1,7 +1,8 @@
+//bfs dfs code 연습
 import java.util.*;
 import java.io.*;
 
-public class _iceCream {
+public class Main {
 	
 	static boolean visited[];
 	static ArrayList<Integer>[] graph;
@@ -53,7 +54,6 @@ public class _iceCream {
 		for(int i = 0; i < N+1; i++) {		//2차원: 가변 ArrayList
 			graph[i] = new ArrayList<>();
 		}
-		
 		
 		for(int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
