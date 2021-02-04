@@ -3,7 +3,8 @@
 - 부모를 합칠 때는 더 작은 값 쪽으로 합친다
 - 크루스칼 알고리즘에 응용될 수 있다 
 
- ``` 
+ ```java
+ class Union-Find{
   //부모 노드를 찾는 함수 
 	static int getParent(int parent[], int x) {
 		if(parent[x] == x) return x;
@@ -41,4 +42,5 @@
 		unionParent(parent, 1, 5);
 		System.out.println("1과 5는 연결되어 있나요?"+ findParent(parent,1,5));
 	}
+}
   ```
