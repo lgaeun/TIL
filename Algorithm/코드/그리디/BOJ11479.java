@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
@@ -17,9 +16,9 @@ public class Main {
 			/*
 			 * 2. 인접 수들 간의 차 계산 및 차의 최대값 구하기 - 중간수들 for문 돌아가며 2개씩 건너뛰며 max 비교
 			 *    - 처음(0번): 1, 2번째가 인접수들 
-       *    - (1번): 0, 1+2번째가 인접수들
-       *    - 중간: 앞 뒤로 하나씩 건너 뛴 수(n-2번,n+2번)가 인접수들 
-       *    - (n-2번): 
+      			 *    - (1번): 0, 1+2번째가 인접수들
+       			 *    - 중간: 앞 뒤로 하나씩 건너 뛴 수(n-2번,n+2번)가 인접수들 
+     			 *    - (n-2번): 
 			 *    - 마지막(n-1): n-2,n-3이 인접수들 
 			 */
 			int max = arr[1]-arr[0];  // 초기값
