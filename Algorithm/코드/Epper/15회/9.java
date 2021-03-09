@@ -17,7 +17,7 @@ public class Main {
 			indegree[r[i][1]]++;              // 선행되어야하는 공정 수 1 증가
 		}
 		
-    Queue<Integer> q = new LinkedList<>();
+    		Queue<Integer> q = new LinkedList<>();
     
 		for(int i = 1; i <= N; i++){  //선행되어야하는 공정 개수가 0인 것들 큐에 먼저 넣기 (즉, 바로 시작할 수 있는 공정)
 			if(indegree[i] == 0) {      
