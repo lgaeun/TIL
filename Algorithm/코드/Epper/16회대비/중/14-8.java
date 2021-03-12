@@ -41,7 +41,7 @@ public class Main {
 		if(cnt == 0) return 0; // ****** 이미 토마토가 다 익어있는 경우!!!!!이 경우 조심하기!!!!!! ********
 		
 		bfs(n, m);
-    	return cnt==0? day-1 : -1;	// 익은 토마토가 1에서 시작했으므로 day는 -1 한 것.
+    		return cnt==0? day-1 : -1;	// 남아있는 안익은 토마토가 없으면 day-1 반환(익은토마토= day 1에서 시작했으므로), 다 익히지 못했으면 -1
     }
 	static void bfs(int n, int m) {
 		
